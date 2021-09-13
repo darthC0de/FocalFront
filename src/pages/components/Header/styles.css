@@ -1,0 +1,43 @@
+header {
+    background: #fff;
+    height: 6rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+header .group-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .group-header .logo {
+    width: 5rem;
+}
+
+header .group-header .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+header .icon-out {
+    color: #393e46;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+    transition: .3s;
+    margin-right: 0.5rem;
+}
+header .icon-out:hover {
+    filter: brightness(0.5);
+}
+
+header .icon-out:active {
+    transform: scale(0.90);
+}

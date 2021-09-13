@@ -1,0 +1,105 @@
+.pdf {
+    background-color: #f00 !important;
+    color: #fff !important;
+
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.pdf .icon-pdf {
+    font-size: 1rem;
+}
+
+section .field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 1rem;
+
+    border: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: 0 0 0.1em #333;
+}
+
+section .field .group-field {
+    min-height: 4rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem;
+
+    padding: 0.5rem;
+    border: none;
+}
+
+section .field .group-field p {
+    color: #333;
+    font-size: .8rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+
+    text-align: left;
+    margin-bottom: 0;
+}
+
+section .field .group-field>p:nth-of-type(2) {
+    padding: 0.1rem 0.5rem;
+    border-radius: .2rem;
+}
+
+section .field .group-field>p:nth-of-type(2).yes {
+    background-color: green;
+    color: #fff;
+}
+
+section .field .group-field>p:nth-of-type(2).no {
+    background-color: #f00;
+    color: #fff;
+}
+
+section .field .group-field>p:nth-of-type(2).not-exist {
+    background-color: #333;
+    color: #fff;
+
+    cursor: auto;
+    filter: none;
+    transform: none;
+}
+
+section .field .observation {
+    border-top: 1px solid #ccc;
+    height: auto;
+}
+.empty-observation {
+    display: none;
+}
+
+section .field .observation p {
+    color: #333;
+    font-size: .7rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+
+    margin: 0.5rem;
+}
+
+@media(min-width: 800px) {
+    section .field .group-field p {
+      text-align: left;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0rem;
+    }
+
+    section .field .group-field>p:nth-of-type(2) {
+        font-size: .9rem;
+    }
+
+    section .field .observation p {
+      font-size: .9rem;
+    }
+  }

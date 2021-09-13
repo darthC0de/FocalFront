@@ -1,0 +1,139 @@
+.selects {
+  width: 100%;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+
+  margin: 0 0 1rem;
+}
+
+.selects>div:nth-of-type(3) {
+  width: 100%;
+}
+
+.selects label {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* .selects .select-wrapper {
+  width: 49%;
+} */
+
+.selects select,
+input {
+  background-color: #fff;
+  width: 100%;
+
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+
+  padding: 0.3rem;
+  margin-top: 0.1rem;
+
+  outline: none;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: .3rem .3rem 0 0;
+}
+.selects select {
+  cursor: pointer;
+  transition: .1s;
+}
+.selects select:hover {
+  background-color: rgb(231, 226, 226);
+}
+
+.selects input {
+  cursor: not-allowed;
+  width: 8rem;
+  margin-top: 0.2rem;
+}
+
+main>form button[type="submit"] {
+  color: #333;
+  background: orange;
+
+  width: 10rem;
+
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+
+  padding: 0.3rem;
+
+  display: block;
+  margin: 1rem auto;
+
+  cursor: pointer;
+  outline: none;
+  transition: .3s;
+
+  border: none;
+  border-radius: 0.3rem;
+}
+
+main>form button[type="submit"]:hover {
+  filter: brightness(.9);
+}
+main>form button[type="submit"]:disabled {
+  cursor: not-allowed;
+}
+@media(min-width: 800px) {
+  .selects {
+    flex-flow: nowrap;
+    margin-bottom: 4rem;
+  }
+
+  label {
+    color: #333;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+
+  .selects select,
+  input {
+    padding: 0.5rem;
+    width: 70%;
+  }
+
+  .selects .select-wrapper {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .selects>div:nth-of-type(1) label {
+    min-width: 7.5rem;
+    text-align: right;
+  }
+
+  .selects>div:nth-of-type(2) {
+    order: 2;
+  }
+
+  .selects>div:nth-of-type(2) input {
+    width: auto;
+  }
+
+  .selects>div:nth-of-type(3) {
+    order: 1;
+  }
+
+  main>form button[type="submit"] {
+    width: 15rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}

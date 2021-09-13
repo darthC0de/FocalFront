@@ -1,0 +1,246 @@
+.field-new-checklist {
+  background: rgb(250, 250, 250);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+
+  border: 1px solid #ccc;
+  border-radius: 0.1rem;
+}
+
+.field-new-checklist .group-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.field-new-checklist .group-field p {
+  text-align: center;
+
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.field-new-checklist .group-field .icons {
+  padding: 0.2rem;
+  display: flex;
+  gap: 0.1rem;
+
+  border-radius: 0.6rem;
+}
+
+.field-new-checklist .group-field .icons label [type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.field-new-checklist .group-field .icons label{
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+
+  padding: 0.2rem 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 0.1rem;
+
+  transition: .3s;
+  cursor: pointer;
+  outline: none;
+  /* box-shadow: 0 0 0.1em #333; */
+}
+
+:hover:is(.like, .unlike, .not-exist) {
+  filter: brightness(0.90);
+  transform: scale(.95);
+}
+:active:is(.like, .unlike, .not-exist) {
+  transform: scale(.86);
+}
+
+.field-new-checklist .icons .like {
+  background: #d3e0ea;
+  color: green;
+}
+
+.field-new-checklist .icons .unlike {
+  background: #d3e0ea;
+  color: red;
+}
+
+.field-new-checklist .icons .not-exist {
+  background: #d3e0ea;
+  color: #333;
+}
+
+.like-active {
+  background: green;
+  color: #fff;
+}
+
+.unlike-active {
+  background: red;
+  color: #fff;
+}
+
+.not-exist-active {
+  background: #333;
+  color: #fff;
+}
+
+.field-new-checklist .observation {
+  width: 100%;
+  /* height: 0; */
+
+  transition: .5s;
+  overflow: hidden;
+}
+
+.field-new-checklist .height-of-observation {
+  height: auto;
+  border-top: 1px solid #888;
+  overflow: visible;
+  transition: .5s;
+}
+
+.field-new-checklist .observation p {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+
+  margin: 0.5rem;
+}
+
+.field-new-checklist .observation textarea {
+  background: #e8eae6;
+
+  display: block;
+  margin: 1rem auto;
+  width: 98%;
+
+  min-height: 4rem;
+
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+
+  resize: vertical;
+  padding: 0.5rem;
+  outline: none;
+
+  border-color: #ccc;
+  border-radius: 0.3rem 0.3rem 0rem 0rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.field-new-checklist .select-field, .text-field {
+  background: #FFFFFF;
+  padding: .1rem;
+  width: 100%;
+
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+
+  border: 1px solid #ccc;
+  border-radius: .3rem;
+  cursor: pointer;
+  outline: none;
+  transition: filter .3s;
+}
+
+.field-new-checklist .text-field {
+  padding: .1rem .5rem;
+  cursor: auto;
+}
+
+.field-new-checklist .select-field:hover {
+  filter: brightness(.90)
+}
+.field-new-checklist .select-field:active {
+  box-shadow: 0 0 .3rem #ccc;
+}
+
+.field-new-checklist .observation button {
+  background: orange;
+  width: 8rem;
+
+  padding: 0.2rem;
+  margin: 1rem auto 0.5rem;
+
+  display: flex;
+  justify-content: center;
+
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+
+  border: none;
+  border-radius: 0.2rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.field-new-checklist .observation button:hover {
+  filter: brightness(0.90);
+}
+
+.field-new-checklist .observation button:active {
+  transform: scale(0.95);
+}
+
+@media(min-width: 800px) {
+  .field-new-checklist .group-field {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .field-new-checklist .group-field p {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0rem;
+  }
+
+  .field-new-checklist .group-field .icons {
+    gap: 0.3rem;
+  }
+
+  .field-new-checklist .group-field .icons .like,
+  .unlike, .not-exist {
+    font-size: 1.2rem;
+  }
+
+  .field-new-checklist .observation p {
+    font-size: 1rem;
+    font-weight: 500;
+
+    margin: 1rem 0.5rem 0;
+  }
+
+  .field-new-checklist .observation textarea {
+    font-size: 1rem;
+  }
+}

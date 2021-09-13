@@ -1,0 +1,116 @@
+.form-container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.form-container form {
+    min-width: 20rem;
+    background-color: #fff;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 1rem;
+    box-shadow: 0 0 1px 0.1em #ccc;
+}
+
+.form-container .group-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+}
+
+.form-container .group-form img {
+    width: 7rem;
+}
+
+.form-container .group-form p {
+    color: #333;
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-container form label{
+    color: #333;
+    font-size: .9rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    transition: filter .3s;
+}
+.form-container form label:hover {
+    filter: opacity(.80);
+}
+
+.form-container form input {
+    width: 100%;
+    padding: .8rem;
+
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+
+    margin: .5rem auto;
+
+    outline: none;
+    cursor: text;
+
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+}
+
+.form-container form input[type='checkbox'] {
+    width: auto;
+    margin-right: 0.3rem;
+    cursor: pointer;
+}
+
+.form-container form button {
+    background-color: orange;
+    color: #fff;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+
+    padding: 0.8rem 2rem;
+
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+
+    border: none;
+    border-radius: 20%/50%;
+    margin: 2rem auto 0rem;
+}
+
+.form-container form button:hover {
+    background: #e69500;
+}
+
+.form-container form button:active {
+    transform: scale(0.90);
+}
+
+.form-container form .messageErr {
+    width: 18rem;
+
+    color: #f00;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Roboto'sans-serif;
+}
