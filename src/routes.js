@@ -7,16 +7,20 @@ import NewChecklist from './pages/NewChecklist/NewChecklist'
 import Checklist from './pages/Checklist/Checklist'
 import ChecklistPDF from './pages/ChecklistPDF/ChecklistPDF'
 
+import GlobalContext from './context/index.js';
+
 export default function Routes() {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact path='/' component={Login} />
-                <Route path='/Panel' component={ChecklistPanel} />
-                <Route path='/NewChecklist' component={NewChecklist} />
-                <Route path='/Checklist' component={Checklist} />
-                <Route path='/ChecklistPDF' component={ChecklistPDF} />
-            </Switch>
+            <GlobalContext>
+                <Switch>
+                    <Route exact path='/' component={Login} />
+                    <Route path='/Panel:token' component={ChecklistPanel} />
+                    <Route path='/NewChecklist' component={NewChecklist} />
+                    <Route path='/Checklist' component={Checklist} />
+                    <Route path='/ChecklistPDF' component={ChecklistPDF} />
+                </Switch>
+            </GlobalContext>
         </BrowserRouter>
     );
 }
