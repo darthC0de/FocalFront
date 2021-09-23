@@ -3,13 +3,15 @@ import { Link, useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import FieldForNewChecklist from '../components/FieldForNewChecklist/Create';
 import Header from '../components/Header/Header';
-
+import { getTokenKey } from '../../context/LoginContext'
 import { format } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
 import './styles.css';
 
 export default function NewChecklist() {
+    const token = getTokenKey();
+    console.log('token: ' + token)
     const id_user = localStorage.getItem('id_user');
     const history = useHistory();
     const [store, setStore] = useState('');
@@ -245,47 +247,47 @@ export default function NewChecklist() {
         try {
             await api.post('storeInfo', dataStoreInfo, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             await api.post('questionsCovid', dataQuestionCovid, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             await api.post('communicationQuestions', dataCommunicationQuestions, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             await api.post('cultureQuestions', dataCultureQuestions, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             await api.post('engagementQuestions', dataEngagementQuestions, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             await api.post('customerExQuestions', dataCustomerExQuestions, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             await api.post('frameQuestions', dataFrameQuestions, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             await api.post('workSafetyQuestions', dataWorkSafetyQuestions, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             await api.post('routinesPmBmQuestions', dataRoutinesPmBmQuestions, {
                 headers: {
-                    authorization: id_user,
+                    authorization: token,
                 }
             });
             history.push('/Panel')
@@ -357,10 +359,10 @@ export default function NewChecklist() {
                         <FieldForNewChecklist
                             fieldType="text"
                             label="O restaurante está fazendo a aferição de temperatura e perguntas de todos os visitantes que entram no restaurante?"
-                            // onChangeInput={e => setQuestionCovid1(e.target.value)}
-                            // onChangeInputValue={questionCovid1}
-                            // valueTextarea={questionCovidObservation1}
-                            // onChangeTextarea={e => setQuestionCovidObservation1(e.target.value)}
+                        // onChangeInput={e => setQuestionCovid1(e.target.value)}
+                        // onChangeInputValue={questionCovid1}
+                        // valueTextarea={questionCovidObservation1}
+                        // onChangeTextarea={e => setQuestionCovidObservation1(e.target.value)}
                         />
                         <FieldForNewChecklist
                             fieldType="icons"
