@@ -15,7 +15,7 @@ export default function Routes() {
             <GlobalContext>
                 <Switch>
                     <Route exact path='/' component={Login} />
-                    <Route path='/Panel:token' component={ChecklistPanel} />
+                    <Route path='/Panel' component={ChecklistPanel} />
                     <Route path='/NewChecklist' component={NewChecklist} />
                     <Route path='/Checklist' component={Checklist} />
                     <Route path='/ChecklistPDF' component={ChecklistPDF} />

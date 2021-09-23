@@ -1,30 +1,18 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-
-import api from '../../services/api'
+import React, { useState, useContext} from 'react'
+import { LoginContext } from '../../context/LoginContext'
 
 import logoBk from '../../assets/logoBk.png'
 import './styles.css'
 
 export default function Login() {
-    const history = useHistory();
-    
+    const { handleLoginContext } = useContext(LoginContext);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    
     async function handleLogin(e) {
         e.preventDefault();
-
-        try {
-            const response = await api.post('/login', { email, password });
-
-            localStorage.setItem('id_user', response.data.id);
-
-            history.push('/Panel');
-        } catch (err) {
-            const messageLoginError = "Falha ao fazer login, por favor verifique o email e senha e tente novamente."
-            document.getElementById("messageError").innerHTML = messageLoginError
-        }
+        handleLoginContext(email, password);
     }
 
     return (
@@ -40,7 +28,6 @@ export default function Login() {
                     name="email"
                     autoComplete="username"
                     placeholder="Email@gmail.com"
-                    value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
 
@@ -49,7 +36,6 @@ export default function Login() {
                     name="psw"
                     autoComplete="current-password"
                     placeholder="Senha"
-                    value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
                 <label htmlFor="check">
